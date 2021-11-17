@@ -37,56 +37,44 @@ namespace WPF_Calculator
          Result(false);
          tbInput.Focus();
       }
-      //long rec1 = 0;
-      char operation;
+      char operation; // to sotre the operation so it can bu used in switch case 
 
       //for numbers button
       private void btnum1_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "1";
-      }
+      { addToInput(1); }
 
       private void btnum2_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "2";
-      }
+      { addToInput(2); }
 
       private void btnum3_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "3";
-      }
+      { addToInput(3); }
 
       private void btnum4_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "4";
-      }
+      { addToInput(4); }
 
 
       private void btnum5_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "5";
-      }
+      { addToInput(5); }
 
       private void btnum6_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "6";
-      }
+      { addToInput(6); }
 
       private void btnum7_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "7";
-      }
+      { addToInput(7); }
 
       private void btnum8_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "8";
-      }
+      { addToInput(8); }
 
       private void btnum9_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = tbInput.Text + "9";
-      }
+      { addToInput(9); }
 
+      private void btnum0_Click(object sender, RoutedEventArgs e)
+      { addToInput(0); }
+
+      public void addToInput(int num)
+      {
+         tbInput.Text = tbInput.Text + num;
+      }
       private void btClear_Click(object sender, RoutedEventArgs e)
       {
          tbInput.Text = string.Empty;

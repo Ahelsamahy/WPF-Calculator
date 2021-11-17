@@ -8,7 +8,7 @@
         Title="MainWindow" Height="438" Width="416" 
         WindowStartupLocation="CenterScreen" Background="White">
     <Grid>
-        <Button x:Name="btnum0" Content="0" HorizontalAlignment="Left" Margin="155,261,0,0" VerticalAlignment="Top" Width="50" FontSize="14"/>
+        <Button x:Name="btnum0" Content="0" HorizontalAlignment="Left" Margin="155,261,0,0" VerticalAlignment="Top" Width="50" FontSize="14" Click="btnum0_Click"/>
         <Button x:Name="btnum1" Content="1" HorizontalAlignment="Left" Margin="77,144,0,0" VerticalAlignment="Top" Width="50" Click="btnum1_Click" FontSize="14"/>
         <Button x:Name="btnum2" Content="2" HorizontalAlignment="Left" Margin="155,144,0,0" VerticalAlignment="Top" Width="50" Click="btnum2_Click" FontSize="14"/>
         <Button x:Name="btnum3" Content="3" HorizontalAlignment="Left" Margin="241,144,0,0" VerticalAlignment="Top" Width="50" Click="btnum3_Click" FontSize="14"/>
