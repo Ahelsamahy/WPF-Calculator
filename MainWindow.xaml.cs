@@ -15,10 +15,6 @@ using System.Windows.Shapes;
 
 namespace WPF_Calculator
 {
-   /// <summary>
-   /// Interaction logic for MainWindow.xaml
-   /// </summary>
-   /// 
    /*
     label for display the numbers and operations
     concatenate the numbers and operations
@@ -26,7 +22,6 @@ namespace WPF_Calculator
     buttons for operations + - / * 
     button to clear
     button to clear last number
-
     */
    public partial class MainWindow : Window
    {
@@ -74,6 +69,39 @@ namespace WPF_Calculator
       public void addToInput(int num)
       {
          tbInput.Text = tbInput.Text + num;
+      }
+
+
+      public void Stored(bool action)
+      {
+         if (!action)
+         {
+            tbClear.Visibility = Visibility.Hidden;
+            tbStored.Visibility = Visibility.Hidden;
+            lbStored.Visibility = Visibility.Hidden;
+         }
+         else
+         {
+            tbClear.Visibility = Visibility.Visible;
+            tbStored.Visibility = Visibility.Visible;
+            lbStored.Visibility = Visibility.Visible;
+         }
+      }
+
+      public void Result(bool action)
+      {
+         if (!action)
+         {
+            lbResult.Visibility = Visibility.Hidden;
+            lbResultInfo.Visibility = Visibility.Hidden;
+            HomePage.Height = 370;
+         }
+         else
+         {
+            lbResult.Visibility = Visibility.Visible;
+            lbResultInfo.Visibility = Visibility.Visible;
+            HomePage.Height = 450;
+         }
       }
       private void btClear_Click(object sender, RoutedEventArgs e)
       {
@@ -133,37 +161,6 @@ namespace WPF_Calculator
             operation = '/';
          }
       }
-      public void Stored(bool action)
-      {
-         if (!action)
-         {
-            tbClear.Visibility = Visibility.Hidden;
-            tbStored.Visibility = Visibility.Hidden;
-            lbStored.Visibility = Visibility.Hidden;
-         }
-         else
-         {
-            tbClear.Visibility = Visibility.Visible;
-            tbStored.Visibility = Visibility.Visible;
-            lbStored.Visibility = Visibility.Visible;
-         }
-      }
-
-      public void Result(bool action)
-      {
-         if (!action)
-         {
-            lbResult.Visibility = Visibility.Hidden;
-            lbResultInfo.Visibility = Visibility.Hidden;
-            HomePage.Height = 370;
-         }
-         else
-         {
-            lbResult.Visibility = Visibility.Visible;
-            lbResultInfo.Visibility = Visibility.Visible;
-            HomePage.Height = 450;
-         }
-      }
 
       private void btBack1_Click(object sender, RoutedEventArgs e)
       {
@@ -210,13 +207,14 @@ namespace WPF_Calculator
          tbStored.Text = string.Empty;
       }
 
-
       private void tbInput_KeyDown(object sender, KeyEventArgs e)
       {
          switch (e.Key)
          {
             case Key.Back:
+               
                tbInput.Text = tbInput.Text.Substring(0, tbInput.Text.Length - 1);
+               
                break;
             case Key.Delete:
                tbInput.Text = string.Empty;
@@ -236,6 +234,17 @@ namespace WPF_Calculator
             case Key.Right:
                break;
             case Key.Down:
+               break;
+            case Key.OemPlus:
+               tbAdd_Click(this, null);
+               btClear_Click(this, null); //remove extra + sign typed in box
+               break;
+            case Key.OemMinus:
+               btMinus_Click(this, null);
+               tbInput.Text = string.Empty; //remove extra - sign typed in box, will return to it later
+               break;
+            case Key.Enter:
+               btEnter_Click(this, null);
                break;
             case Key.Decimal:
                tbInput.Text = tbInput.Text + ".";

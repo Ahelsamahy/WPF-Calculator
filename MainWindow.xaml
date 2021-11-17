@@ -5,32 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="438" Width="416" 
+        Title="MainWindow" Height="405" Width="386" 
         WindowStartupLocation="CenterScreen" Background="White">
     <Grid>
-        <Button x:Name="btnum0" Content="0" HorizontalAlignment="Left" Margin="155,261,0,0" VerticalAlignment="Top" Width="50" FontSize="14" Click="btnum0_Click"/>
-        <Button x:Name="btnum1" Content="1" HorizontalAlignment="Left" Margin="77,144,0,0" VerticalAlignment="Top" Width="50" Click="btnum1_Click" FontSize="14"/>
-        <Button x:Name="btnum2" Content="2" HorizontalAlignment="Left" Margin="155,144,0,0" VerticalAlignment="Top" Width="50" Click="btnum2_Click" FontSize="14"/>
-        <Button x:Name="btnum3" Content="3" HorizontalAlignment="Left" Margin="241,144,0,0" VerticalAlignment="Top" Width="50" Click="btnum3_Click" FontSize="14"/>
-        <Button x:Name="btnum4" Content="4" HorizontalAlignment="Left" Margin="77,181,0,0" VerticalAlignment="Top" Width="50" Click="btnum4_Click" FontSize="14"/>
-        <Button x:Name="btnum5" Content="5" HorizontalAlignment="Left" Margin="155,181,0,0" VerticalAlignment="Top" Width="50" Click="btnum5_Click" FontSize="14"/>
-        <Button x:Name="btnum6" Content="6" HorizontalAlignment="Left" Margin="241,186,0,0" VerticalAlignment="Top" Width="50" Click="btnum6_Click" FontSize="14"/>
-        <Button x:Name="btnum7" Content="7" HorizontalAlignment="Left" Margin="77,221,0,0" VerticalAlignment="Top" Width="50" Click="btnum7_Click" FontSize="14"/>
-        <Button x:Name="btnum8" Content="8" HorizontalAlignment="Left" Margin="155,221,0,0" VerticalAlignment="Top" Width="50" Click="btnum8_Click" FontSize="14"/>
-        <Button x:Name="btnum9" Content="9" HorizontalAlignment="Left" Margin="241,221,0,0" VerticalAlignment="Top" Width="50" Click="btnum9_Click" FontSize="14"/>
-        <Button x:Name="tbAdd" Content="+" HorizontalAlignment="Left" Margin="241,261,0,0" VerticalAlignment="Top" Width="50" Click="tbAdd_Click" FontSize="14"/>
-        <Button x:Name="btMinus" Content="-" HorizontalAlignment="Left" Margin="77,261,0,0" VerticalAlignment="Top" Width="50" Click="btMinus_Click" FontSize="14"/>
-        <Button x:Name="btEnter" Content="Enter" HorizontalAlignment="Left" Margin="331,221,0,0" VerticalAlignment="Top" Width="50" Height="60" Click="btEnter_Click" FontSize="14"/>
-        <Button x:Name="btClear" Content="Clear" HorizontalAlignment="Left" Margin="331,144,0,0" VerticalAlignment="Top" Width="50" Height="60" Click="btClear_Click" FontSize="14"/>
-        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Margin="77,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="39" FontSize="20" KeyDown="tbInput_KeyDown"/>
-        <TextBox x:Name="tbStored" HorizontalAlignment="Left" Margin="77,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="20"/>
-        <Label x:Name="lbStored" Content="Stored number&#xD;&#xA;" HorizontalAlignment="Left" Margin="13,33,0,0" VerticalAlignment="Top" Height="23"/>
-        <Button x:Name="tbClear" Content="Clear here" HorizontalAlignment="Left" Margin="316,61,0,0" VerticalAlignment="Top" Foreground="#FF001FFF" BorderThickness="0,0,0,0" Width="65" Background="{x:Null}" FontStretch="Medium" FontStyle="Normal" FontWeight="Normal" AutomationProperties.HelpText="double click to clear the stored info" MouseDoubleClick="tbClear_MouseDoubleClick"/>
-        <Button x:Name="btBack1" Content="&lt;" HorizontalAlignment="Left" Margin="323,99,0,0" VerticalAlignment="Top" Width="33" Click="btBack1_Click"/>
-        <Label x:Name="lbResultInfo" Content="Label" HorizontalAlignment="Left" Margin="77,365,0,0" VerticalAlignment="Top" Width="66" FontSize="14"/>
-        <Label x:Name="lbResult" Content="Label" HorizontalAlignment="Left" Margin="155,354,0,0" VerticalAlignment="Top" Width="226" Height="41" FontSize="24"/>
-        <Button x:Name="btDivide" Content="/" HorizontalAlignment="Left" Margin="77,299,0,0" VerticalAlignment="Top" Width="103" FontSize="14" Click="btDivide_Click"/>
-        <Button x:Name="btMultiply" Content="*" HorizontalAlignment="Left" Margin="188,299,0,0" VerticalAlignment="Top" Width="103" FontSize="14" Click="btMultiply_Click"/>
+        <Button x:Name="btnum0" Content="0" HorizontalAlignment="Left" Margin="124,241,0,0" VerticalAlignment="Top" Width="50" FontSize="14" Click="btnum0_Click"/>
+        <Button x:Name="btnum1" Content="1" HorizontalAlignment="Left" Margin="46,124,0,0" VerticalAlignment="Top" Width="50" Click="btnum1_Click" FontSize="14"/>
+        <Button x:Name="btnum2" Content="2" HorizontalAlignment="Left" Margin="124,124,0,0" VerticalAlignment="Top" Width="50" Click="btnum2_Click" FontSize="14"/>
+        <Button x:Name="btnum3" Content="3" HorizontalAlignment="Left" Margin="210,124,0,0" VerticalAlignment="Top" Width="50" Click="btnum3_Click" FontSize="14"/>
+        <Button x:Name="btnum4" Content="4" HorizontalAlignment="Left" Margin="46,161,0,0" VerticalAlignment="Top" Width="50" Click="btnum4_Click" FontSize="14"/>
+        <Button x:Name="btnum5" Content="5" HorizontalAlignment="Left" Margin="124,161,0,0" VerticalAlignment="Top" Width="50" Click="btnum5_Click" FontSize="14"/>
+        <Button x:Name="btnum6" Content="6" HorizontalAlignment="Left" Margin="210,166,0,0" VerticalAlignment="Top" Width="50" Click="btnum6_Click" FontSize="14"/>
+        <Button x:Name="btnum7" Content="7" HorizontalAlignment="Left" Margin="46,201,0,0" VerticalAlignment="Top" Width="50" Click="btnum7_Click" FontSize="14"/>
+        <Button x:Name="btnum8" Content="8" HorizontalAlignment="Left" Margin="124,201,0,0" VerticalAlignment="Top" Width="50" Click="btnum8_Click" FontSize="14"/>
+        <Button x:Name="btnum9" Content="9" HorizontalAlignment="Left" Margin="210,201,0,0" VerticalAlignment="Top" Width="50" Click="btnum9_Click" FontSize="14"/>
+        <Button x:Name="tbAdd" Content="+" HorizontalAlignment="Left" Margin="210,241,0,0" VerticalAlignment="Top" Width="50" Click="tbAdd_Click" FontSize="14"/>
+        <Button x:Name="btMinus" Content="-" HorizontalAlignment="Left" Margin="46,241,0,0" VerticalAlignment="Top" Width="50" Click="btMinus_Click" FontSize="14"/>
+        <Button x:Name="btEnter" Content="Enter" HorizontalAlignment="Left" Margin="300,201,0,0" VerticalAlignment="Top" Width="50" Height="60" Click="btEnter_Click" FontSize="14"/>
+        <Button x:Name="btClear" Content="Clear" HorizontalAlignment="Left" Margin="300,124,0,0" VerticalAlignment="Top" Width="50" Height="60" Click="btClear_Click" FontSize="14"/>
+        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Margin="46,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="39" FontSize="20" KeyDown="tbInput_KeyDown"/>
+        <TextBox x:Name="tbStored" HorizontalAlignment="Left" Margin="46,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="20"/>
+        <Label x:Name="lbStored" Content="Stored number&#xD;&#xA;" HorizontalAlignment="Left" Margin="22,13,0,0" VerticalAlignment="Top" Height="23"/>
+        <Button x:Name="tbClear" Content="Clear here" HorizontalAlignment="Left" Margin="284,41,0,0" VerticalAlignment="Top" Foreground="#FF001FFF" BorderThickness="0,0,0,0" Width="66" Background="{x:Null}" FontStretch="Medium" FontStyle="Normal" FontWeight="Normal" AutomationProperties.HelpText="double click to clear the stored info" MouseDoubleClick="tbClear_MouseDoubleClick"/>
+        <Button x:Name="btBack1" Content="&lt;" HorizontalAlignment="Left" Margin="292,79,0,0" VerticalAlignment="Top" Width="32" Click="btBack1_Click"/>
+        <Label x:Name="lbResultInfo" Content="Label" HorizontalAlignment="Left" Margin="46,345,0,0" VerticalAlignment="Top" Width="66" FontSize="14"/>
+        <Label x:Name="lbResult" Content="Label" HorizontalAlignment="Left" Margin="124,334,0,0" VerticalAlignment="Top" Width="226" Height="41" FontSize="24"/>
+        <Button x:Name="btDivide" Content="/" HorizontalAlignment="Left" Margin="46,279,0,0" VerticalAlignment="Top" Width="102" FontSize="14" Click="btDivide_Click"/>
+        <Button x:Name="btMultiply" Content="*" HorizontalAlignment="Left" Margin="156,279,0,0" VerticalAlignment="Top" Width="104" FontSize="14" Click="btMultiply_Click"/>
 
     </Grid>
 </Window>
