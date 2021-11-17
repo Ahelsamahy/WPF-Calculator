@@ -37,7 +37,7 @@ namespace WPF_Calculator
          Result(false);
          tbInput.Focus();
       }
-      char operation; // to sotre the operation so it can bu used in switch case 
+      char operation; // to store the operation so it can bu used in switch case 
 
       //for numbers button
       private void btnum1_Click(object sender, RoutedEventArgs e)
@@ -169,8 +169,15 @@ namespace WPF_Calculator
       {
          //var text = int.Parse(tbStored.Text);
          //tbStored.Text = text.Remove(text.Length - 1);
+         if (tbInput.Text.Length == 0)
+         {
+            MessageBox.Show("you have already deleted every number here", "Empty", MessageBoxButton.OK);
+         }
+         else
+         {
+            tbInput.Text = tbInput.Text.Substring(0, tbInput.Text.Length - 1);
+         }
 
-         tbInput.Text = tbInput.Text.Substring(0, tbInput.Text.Length - 1);
       }
 
       private void btEnter_Click(object sender, RoutedEventArgs e)
