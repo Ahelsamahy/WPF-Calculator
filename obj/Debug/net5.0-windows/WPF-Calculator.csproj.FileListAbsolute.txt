@@ -19,3 +19,4 @@ D:\Projects\C#\WPF-Calculator\obj\Debug\net5.0-windows\WPF-Calculator.dll
 D:\Projects\C#\WPF-Calculator\obj\Debug\net5.0-windows\ref\WPF-Calculator.dll
 D:\Projects\C#\WPF-Calculator\obj\Debug\net5.0-windows\WPF-Calculator.pdb
 D:\Projects\C#\WPF-Calculator\obj\Debug\net5.0-windows\WPF-Calculator.genruntimeconfig.cache
+D:\Projects\C#\WPF-Calculator\obj\Debug\net5.0-windows\WPF-Calculator.csprojAssemblyReference.cache

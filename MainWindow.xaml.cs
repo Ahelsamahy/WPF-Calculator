@@ -183,19 +183,19 @@ namespace WPF_Calculator
          {
             case '+':
                Result(true);
-               lbResult.Content = int.Parse(tbStored.Text) + int.Parse(tbInput.Text);
+               lbResult.Content = double.Parse(tbStored.Text) + double.Parse(tbInput.Text);
                break;
             case '-':
                Result(true);
-               lbResult.Content = int.Parse(tbStored.Text) - int.Parse(tbInput.Text);
+               lbResult.Content = double.Parse(tbStored.Text) - double.Parse(tbInput.Text);
                break;
             case '*':
                Result(true);
-               lbResult.Content = int.Parse(tbStored.Text) * int.Parse(tbInput.Text);
+               lbResult.Content = double.Parse(tbStored.Text) * double.Parse(tbInput.Text);
                break;
             case '/':
                Result(true);
-               lbResult.Content = int.Parse(tbStored.Text) / int.Parse(tbInput.Text);
+               lbResult.Content = double.Parse(tbStored.Text) / double.Parse(tbInput.Text);
                break;
             default:
                break;
@@ -213,6 +213,7 @@ namespace WPF_Calculator
          {
             case Key.Back:
                
+
                tbInput.Text = tbInput.Text.Substring(0, tbInput.Text.Length - 1);
                
                break;
@@ -229,28 +230,22 @@ namespace WPF_Calculator
 
             case Key.Left:
                break;
-            case Key.Up:
-               break;
             case Key.Right:
-               break;
-            case Key.Down:
-               break;
-            case Key.OemPlus:
-               tbAdd_Click(this, null);
-               btClear_Click(this, null); //remove extra + sign typed in box
-               break;
-            case Key.OemMinus:
-               btMinus_Click(this, null);
-               tbInput.Text = string.Empty; //remove extra - sign typed in box, will return to it later
                break;
             case Key.Enter:
                btEnter_Click(this, null);
                break;
-            case Key.Decimal:
-               tbInput.Text = tbInput.Text + ".";
+            case Key.OemPlus:
+               tbAdd_Click(this, null);
+               break;
+            case Key.OemMinus:
+               btMinus_Click(this, null);
                break;
             case Key.Divide:
-               operation = '/';
+               btDivide_Click(this, null);
+               break;
+            case Key.Multiply:
+               btMultiply_Click(this, null);
                break;
             default:
                break;
