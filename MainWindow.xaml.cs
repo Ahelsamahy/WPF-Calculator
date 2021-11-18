@@ -27,13 +27,17 @@ namespace WPF_Calculator
    {
       public MainWindow()
       {
+         startCondition();
+      }
+      char operation; // to store the operation so it can bu used in switch case 
+      public void startCondition()
+      {
          InitializeComponent();
          Stored(false);
          Result(false);
          tbInput.Focus();
+         btClear_Click(this, null);
       }
-      char operation; // to store the operation so it can bu used in switch case 
-
       //for numbers button
       private void btnum1_Click(object sender, RoutedEventArgs e)
       { addToInput(1); }
@@ -207,15 +211,17 @@ namespace WPF_Calculator
          tbStored.Text = string.Empty;
       }
 
+
+
       private void tbInput_KeyDown(object sender, KeyEventArgs e)
       {
          switch (e.Key)
          {
+            case Key.Escape:
+               startCondition(); //reset the window as the beginning and make tbinput empty
+               break;
             case Key.Back:
-               
-
                tbInput.Text = tbInput.Text.Substring(0, tbInput.Text.Length - 1);
-               
                break;
             case Key.Delete:
                tbInput.Text = string.Empty;
@@ -223,15 +229,7 @@ namespace WPF_Calculator
             //case Key.Enter:
             //   //make if statement that if there is something in stored and there is sign at the 
             //   //beginning then do the operation on the beginning
-            //   Stored(true);
-            //   tbStored.Text = tbInput.Text;
-            //   tbInput.Text = string.Empty;
-            //   break;
 
-            case Key.Left:
-               break;
-            case Key.Right:
-               break;
             case Key.Enter:
                btEnter_Click(this, null);
                break;
