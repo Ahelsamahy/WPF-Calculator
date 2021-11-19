@@ -9,9 +9,10 @@
   <a href="#emailware">Emailware</a> •
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
+  <img src="https://github.com/Ahelsamahy/WPF-Calculator/blob/main/Overall.gif?raw=true" >
 </p>
 
-<img style="display: block; margin-left: auto; margin-right: auto;" src="https://github.com/Ahelsamahy/WPF-Calculator/blob/main/Overall.gif?raw=true" >
+
 
 
 ## Key Features
