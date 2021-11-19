@@ -30,16 +30,8 @@ namespace WPF_Calculator
          startCondition();
       }
       char operation; // to store the operation so it can bu used in switch case 
-      public void startCondition()
-      {
-         InitializeComponent();
-         Stored(false);
-         Result(false);
-         tbInput.Focus();
-         btClear_Click(this, null);
-         tbStored.IsReadOnly = true;
-      }
-      //for numbers button
+
+
       private void btnum1_Click(object sender, RoutedEventArgs e)
       { addToInput(1); }
 
@@ -70,6 +62,17 @@ namespace WPF_Calculator
 
       private void btnum0_Click(object sender, RoutedEventArgs e)
       { addToInput(0); }
+
+      public void startCondition()
+      {
+         InitializeComponent();
+         Stored(false);
+         Result(false);
+         tbInput.Focus();
+         btClear_Click(this, null);
+         tbStored.IsReadOnly = true;
+      }
+      //for numbers button
 
       public void addToInput(int num)
       {
@@ -109,14 +112,14 @@ namespace WPF_Calculator
             HomePage.Height = 450;
          }
       } 
-      public void operationMaker(char operat)
+      public void operationMaker(char operate)
       {
          Stored(true);
          if (tbStored.Text != tbInput.Text)
          {
             tbStored.Text = tbInput.Text;
             tbInput.Text = string.Empty;
-            operation = operat;
+            operation = operate;
             tbInput.Focus();
          }
          else if (tbStored.Text != string.Empty)
@@ -128,7 +131,7 @@ namespace WPF_Calculator
          // for example: if the user clicked the minus button one time it will store the result in the tbStored, one more time it will rmeove it becasue it will store the zero value of the tbInput in the tbStored, this one is to check if there is something in tbStored, then keep it the same way
       }
 
-
+      /* buttons operation*/
       private void btClear_Click(object sender, RoutedEventArgs e)
       {
          tbInput.Text = string.Empty;
@@ -136,8 +139,8 @@ namespace WPF_Calculator
       private void btMinus_Click(object sender, RoutedEventArgs e)
       {
          operationMaker('-');
-      }
 
+      }
       private void tbAdd_Click(object sender, RoutedEventArgs e)
       {
          operationMaker('+');
@@ -211,13 +214,10 @@ namespace WPF_Calculator
             case Key.Delete:
                tbInput.Text = string.Empty;
                break;
-            //case Key.Enter:
-            //   //make if statement that if there is something in stored and there is sign at the 
-            //   //beginning then do the operation on the beginning
-
             case Key.Enter:
                btEnter_Click(this, null);
                break;
+
             case Key.OemPlus:
                tbAdd_Click(this, null);
                break;
@@ -234,7 +234,5 @@ namespace WPF_Calculator
                break;
          }
       }
-
-
    }
 }

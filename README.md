@@ -11,7 +11,8 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://github.com/Ahelsamahy/WPF-Calculator/blob/main/Overall.gif?raw=true)
+<img align="center" src="https://github.com/Ahelsamahy/WPF-Calculator/blob/main/Overall.gif?raw=true" >
+
 
 ## Key Features
 
