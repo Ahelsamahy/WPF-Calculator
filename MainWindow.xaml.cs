@@ -37,6 +37,7 @@ namespace WPF_Calculator
          Result(false);
          tbInput.Focus();
          btClear_Click(this, null);
+         tbStored.IsReadOnly = true;
       }
       //for numbers button
       private void btnum1_Click(object sender, RoutedEventArgs e)
@@ -81,14 +82,14 @@ namespace WPF_Calculator
          if (!action)
          {
             tbClear.Visibility = Visibility.Hidden;
+            lbStorednum.Visibility = Visibility.Hidden;
             tbStored.Visibility = Visibility.Hidden;
-            lbStored.Visibility = Visibility.Hidden;
          }
          else
          {
             tbClear.Visibility = Visibility.Visible;
+            lbStorednum.Visibility = Visibility.Visible;
             tbStored.Visibility = Visibility.Visible;
-            lbStored.Visibility = Visibility.Visible;
          }
       }
 
@@ -124,16 +125,24 @@ namespace WPF_Calculator
             tbStored.Text = tbInput.Text;
             tbInput.Text = string.Empty;
             operation = '-';
+            tbInput.Focus();
          }
+         // this if condition is to make sure that the result won't be removed if the user clicked the same operation button again
+         // for example: if the user clicked the minus button one time it will store the result in the tbStored, one more time it will rmeove it becasue it will store the zero value of the tbInput in the tbStored, this one is to check if there is something in tbStored, then keep it the same way
       }
 
       private void tbAdd_Click(object sender, RoutedEventArgs e)
       {
+         if (tbStored.Text != string.Empty)
+         {
+            tbStored.Text = tbStored.Text;
+         }else { 
          Stored(true);
          tbStored.Text = tbInput.Text;
          tbInput.Text = string.Empty;
          operation = '+';
-
+         tbInput.Focus();
+}
       }
 
       private void btMultiply_Click(object sender, RoutedEventArgs e)
@@ -148,6 +157,7 @@ namespace WPF_Calculator
             tbStored.Text = tbInput.Text;
             tbInput.Text = string.Empty;
             operation = '*';
+            tbInput.Focus();
          }
       }
 
@@ -163,6 +173,7 @@ namespace WPF_Calculator
             tbStored.Text = tbInput.Text;
             tbInput.Text = string.Empty;
             operation = '/';
+            tbInput.Focus();
          }
       }
 
