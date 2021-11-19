@@ -116,64 +116,66 @@ namespace WPF_Calculator
       private void btMinus_Click(object sender, RoutedEventArgs e)
       {
          Stored(true);
-         if (tbStored.Text != string.Empty)
-         {
-            tbStored.Text = tbStored.Text;
-         }
-         else
+         if (tbStored.Text != tbInput.Text)
          {
             tbStored.Text = tbInput.Text;
             tbInput.Text = string.Empty;
             operation = '-';
             tbInput.Focus();
          }
-         // this if condition is to make sure that the result won't be removed if the user clicked the same operation button again
+         else if (tbStored.Text != string.Empty)
+         {
+            tbStored.Text = tbStored.Text;
+         }
+         //first if conditon so the user can change the operation which will change in the tbInput, if the user did input for wrong number and want to change it.
+         // second one: this if condition is to make sure that the result won't be removed if the user clicked the same operation button again
          // for example: if the user clicked the minus button one time it will store the result in the tbStored, one more time it will rmeove it becasue it will store the zero value of the tbInput in the tbStored, this one is to check if there is something in tbStored, then keep it the same way
       }
 
       private void tbAdd_Click(object sender, RoutedEventArgs e)
       {
-         if (tbStored.Text != string.Empty)
+         if (tbStored.Text != tbInput.Text)
+         {
+            tbStored.Text = tbInput.Text;
+            tbInput.Text = string.Empty;
+            operation = '+';
+            tbInput.Focus();
+         }
+         else if (tbStored.Text != string.Empty)
          {
             tbStored.Text = tbStored.Text;
-         }else { 
-         Stored(true);
-         tbStored.Text = tbInput.Text;
-         tbInput.Text = string.Empty;
-         operation = '+';
-         tbInput.Focus();
-}
+         }
       }
 
       private void btMultiply_Click(object sender, RoutedEventArgs e)
       {
          Stored(true);
-         if (tbStored.Text != string.Empty)
-         {
-            tbStored.Text = tbStored.Text;
-         }
-         else
+         if (tbStored.Text != tbInput.Text)
          {
             tbStored.Text = tbInput.Text;
             tbInput.Text = string.Empty;
             operation = '*';
             tbInput.Focus();
          }
+         else if (tbStored.Text != string.Empty)
+         {
+            tbStored.Text = tbStored.Text;
+         }
       }
 
       private void btDivide_Click(object sender, RoutedEventArgs e)
       {
          Stored(true);
-         if (tbStored.Text != string.Empty)
-         {
-            tbStored.Text = tbStored.Text;
-         }
-         else
+         if (tbStored.Text != tbInput.Text)
          {
             tbStored.Text = tbInput.Text;
             tbInput.Text = string.Empty;
             operation = '/';
             tbInput.Focus();
+         }
+         else if (tbStored.Text != string.Empty)
+         {
+            tbStored.Text = tbStored.Text;
          }
       }
 
