@@ -18,8 +18,8 @@
 * Add and remove numbers.
 * 1+1=2-1 that's 3.
 * ESC button will reset the project like you started .
-* double click clear button to remove the result from the stored .
-* make operation on the stored number without having to delete all and start again.
+* double click "clear here" button to remove the result from the stored .
+* Make operation on the stored number without having to delete all and start again.
 
 ## How To Use
 
