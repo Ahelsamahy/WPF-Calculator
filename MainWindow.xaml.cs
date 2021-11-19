@@ -76,7 +76,7 @@ namespace WPF_Calculator
          tbInput.Text = tbInput.Text + num;
       }
 
-
+      //show/hide the tbStored,lbStored and clear button
       public void Stored(bool action)
       {
          if (!action)
@@ -91,8 +91,9 @@ namespace WPF_Calculator
             lbStorednum.Visibility = Visibility.Visible;
             tbStored.Visibility = Visibility.Visible;
          }
-      }
+      } 
 
+      // show / hide lbresult, lbResultInfo and change the width of application
       public void Result(bool action)
       {
          if (!action)
@@ -107,20 +108,15 @@ namespace WPF_Calculator
             lbResultInfo.Visibility = Visibility.Visible;
             HomePage.Height = 450;
          }
-      }
-      private void btClear_Click(object sender, RoutedEventArgs e)
-      {
-         tbInput.Text = string.Empty;
-      }
-
-      private void btMinus_Click(object sender, RoutedEventArgs e)
+      } 
+      public void operationMaker(char operat)
       {
          Stored(true);
          if (tbStored.Text != tbInput.Text)
          {
             tbStored.Text = tbInput.Text;
             tbInput.Text = string.Empty;
-            operation = '-';
+            operation = operat;
             tbInput.Focus();
          }
          else if (tbStored.Text != string.Empty)
@@ -132,51 +128,29 @@ namespace WPF_Calculator
          // for example: if the user clicked the minus button one time it will store the result in the tbStored, one more time it will rmeove it becasue it will store the zero value of the tbInput in the tbStored, this one is to check if there is something in tbStored, then keep it the same way
       }
 
+
+      private void btClear_Click(object sender, RoutedEventArgs e)
+      {
+         tbInput.Text = string.Empty;
+      }
+      private void btMinus_Click(object sender, RoutedEventArgs e)
+      {
+         operationMaker('-');
+      }
+
       private void tbAdd_Click(object sender, RoutedEventArgs e)
       {
-         if (tbStored.Text != tbInput.Text)
-         {
-            tbStored.Text = tbInput.Text;
-            tbInput.Text = string.Empty;
-            operation = '+';
-            tbInput.Focus();
-         }
-         else if (tbStored.Text != string.Empty)
-         {
-            tbStored.Text = tbStored.Text;
-         }
+         operationMaker('+');
       }
 
       private void btMultiply_Click(object sender, RoutedEventArgs e)
       {
-         Stored(true);
-         if (tbStored.Text != tbInput.Text)
-         {
-            tbStored.Text = tbInput.Text;
-            tbInput.Text = string.Empty;
-            operation = '*';
-            tbInput.Focus();
-         }
-         else if (tbStored.Text != string.Empty)
-         {
-            tbStored.Text = tbStored.Text;
-         }
+         operationMaker('*');
       }
 
       private void btDivide_Click(object sender, RoutedEventArgs e)
       {
-         Stored(true);
-         if (tbStored.Text != tbInput.Text)
-         {
-            tbStored.Text = tbInput.Text;
-            tbInput.Text = string.Empty;
-            operation = '/';
-            tbInput.Focus();
-         }
-         else if (tbStored.Text != string.Empty)
-         {
-            tbStored.Text = tbStored.Text;
-         }
+         operationMaker('/');
       }
 
       private void btBack1_Click(object sender, RoutedEventArgs e)
@@ -223,8 +197,6 @@ namespace WPF_Calculator
       {
          tbStored.Text = string.Empty;
       }
-
-
 
       private void tbInput_KeyDown(object sender, KeyEventArgs e)
       {
