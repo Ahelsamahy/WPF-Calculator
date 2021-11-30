@@ -8,29 +8,54 @@
         Title="Calculator" Height="405" Width="386" 
         WindowStartupLocation="CenterScreen" Background="White">
     <Grid>
-        <Button x:Name="btnum0" Content="0" HorizontalAlignment="Left" Margin="124,241,0,0" VerticalAlignment="Top" Width="50" FontSize="14" Click="btnum0_Click"/>
-        <Button x:Name="btnum1" Content="1" HorizontalAlignment="Left" Margin="46,124,0,0" VerticalAlignment="Top" Width="50" Click="btnum1_Click" FontSize="14"/>
-        <Button x:Name="btnum2" Content="2" HorizontalAlignment="Left" Margin="124,124,0,0" VerticalAlignment="Top" Width="50" Click="btnum2_Click" FontSize="14"/>
-        <Button x:Name="btnum3" Content="3" HorizontalAlignment="Left" Margin="210,124,0,0" VerticalAlignment="Top" Width="50" Click="btnum3_Click" FontSize="14"/>
-        <Button x:Name="btnum4" Content="4" HorizontalAlignment="Left" Margin="46,161,0,0" VerticalAlignment="Top" Width="50" Click="btnum4_Click" FontSize="14"/>
-        <Button x:Name="btnum5" Content="5" HorizontalAlignment="Left" Margin="124,161,0,0" VerticalAlignment="Top" Width="50" Click="btnum5_Click" FontSize="14"/>
-        <Button x:Name="btnum6" Content="6" HorizontalAlignment="Left" Margin="210,161,0,0" VerticalAlignment="Top" Width="50" Click="btnum6_Click" FontSize="14"/>
-        <Button x:Name="btnum7" Content="7" HorizontalAlignment="Left" Margin="46,201,0,0" VerticalAlignment="Top" Width="50" Click="btnum7_Click" FontSize="14"/>
-        <Button x:Name="btnum8" Content="8" HorizontalAlignment="Left" Margin="124,201,0,0" VerticalAlignment="Top" Width="50" Click="btnum8_Click" FontSize="14"/>
-        <Button x:Name="btnum9" Content="9" HorizontalAlignment="Left" Margin="210,201,0,0" VerticalAlignment="Top" Width="50" Click="btnum9_Click" FontSize="14"/>
-        <Button x:Name="tbAdd" Content="+" HorizontalAlignment="Left" Margin="210,241,0,0" VerticalAlignment="Top" Width="50" Click="tbAdd_Click" FontSize="14"/>
-        <Button x:Name="btMinus" Content="-" HorizontalAlignment="Left" Margin="46,241,0,0" VerticalAlignment="Top" Width="50" Click="btMinus_Click" FontSize="14"/>
-        <Button x:Name="btEnter" Content="Enter" HorizontalAlignment="Left" Margin="300,201,0,0" VerticalAlignment="Top" Width="50" Height="60" Click="btEnter_Click" FontSize="14"/>
-        <Button x:Name="btClear" Content="Clear" HorizontalAlignment="Left" Margin="300,124,0,0" VerticalAlignment="Top" Width="50" Height="60" Click="btClear_Click" FontSize="14"/>
-        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Margin="46,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="39" FontSize="20" KeyDown="tbInput_KeyDown" PreviewTextInput="PreviewTextInput"/>
-        <TextBox x:Name="tbStored" HorizontalAlignment="Left" Margin="46,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="20"/>
-        <Label x:Name="lbStorednum" Content="Stored number&#xD;&#xA;" HorizontalAlignment="Left" Margin="22,13,0,0" VerticalAlignment="Top" Height="23"/>
-        <Button x:Name="tbClear" Content="Clear here" HorizontalAlignment="Left" Margin="284,41,0,0" VerticalAlignment="Top" Foreground="#FF001FFF" BorderThickness="0,0,0,0" Width="66" Background="{x:Null}" FontStretch="Medium" FontStyle="Normal" FontWeight="Normal" AutomationProperties.HelpText="double click to clear the stored info" MouseDoubleClick="tbClear_MouseDoubleClick"/>
-        <Button x:Name="btBack1" Content="&lt;" HorizontalAlignment="Left" Margin="292,79,0,0" VerticalAlignment="Top" Width="32" Click="btBack1_Click"/>
-        <Label x:Name="lbResultInfo" Content="Label" HorizontalAlignment="Left" Margin="46,345,0,0" VerticalAlignment="Top" Width="66" FontSize="14"/>
-        <Label x:Name="lbResult" Content="Label" HorizontalAlignment="Left" Margin="124,334,0,0" VerticalAlignment="Top" Width="226" Height="41" FontSize="24"/>
-        <Button x:Name="btDivide" Content="/" HorizontalAlignment="Left" Margin="46,279,0,0" VerticalAlignment="Top" Width="102" FontSize="14" Click="btDivide_Click"/>
-        <Button x:Name="btMultiply" Content="*" HorizontalAlignment="Left" Margin="156,279,0,0" VerticalAlignment="Top" Width="104" FontSize="14" Click="btMultiply_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
 
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "0.50*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+            <RowDefinition Height = "*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lbStorednum" Content="Stored number&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" x:Name="tbStored" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="20"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2" x:Name="tbInput" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="39" FontSize="20" KeyDown="tbInput_KeyDown" PreviewTextInput="PreviewTextInput"/>
+
+
+        <Button Grid.Row="1" Grid.Column="7" Margin="-10,0,0,0" x:Name="tbClear" Content="Clear here" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF001FFF" BorderThickness="0,0,0,0" Width="66" Background="{x:Null}" FontStretch="Medium" FontStyle="Normal" FontWeight="Normal" AutomationProperties.HelpText="double click to clear the stored info" MouseDoubleClick="tbClear_MouseDoubleClick"/>
+        <Button Grid.Row="2" Grid.Column="7" Margin="-10,0,0,0" x:Name="btBack1" Content="&lt;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Click="btBack1_Click"/>
+
+        <Button Grid.Row="4" Grid.Column="1" x:Name="btnum0" Content="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="50" FontSize="14" Click="btnum0_Click"/>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="btnum1" Content="1" HorizontalAlignment="center" VerticalAlignment="Top" Width="50" Click="btnum1_Click" FontSize="14"/>
+        <Button Grid.Row="4" Grid.Column="3" x:Name="btnum2" Content="2" HorizontalAlignment="right"  VerticalAlignment="Top" Width="50" Click="btnum2_Click" FontSize="14"/>
+        <Button Grid.Row="5" Grid.Column="1" x:Name="btnum3" Content="3" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="50" Click="btnum3_Click" FontSize="14"/>
+        <Button Grid.Row="5" Grid.Column="2" x:Name="btnum4" Content="4" HorizontalAlignment="center" VerticalAlignment="Top" Width="50" Click="btnum4_Click" FontSize="14"/>
+        <Button Grid.Row="5" Grid.Column="3" x:Name="btnum5" Content="5" HorizontalAlignment="right"  VerticalAlignment="Top" Width="50" Click="btnum5_Click" FontSize="14"/>
+        <Button Grid.Row="6" Grid.Column="1" x:Name="btnum6" Content="6" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="50" Click="btnum6_Click" FontSize="14"/>
+        <Button Grid.Row="6" Grid.Column="2" x:Name="btnum7" Content="7" HorizontalAlignment="center" VerticalAlignment="Top" Width="50" Click="btnum7_Click" FontSize="14"/>
+        <Button Grid.Row="6" Grid.Column="3" x:Name="btnum8" Content="8" HorizontalAlignment="right"  VerticalAlignment="Top" Width="50" Click="btnum8_Click" FontSize="14"/>
+        <Button Grid.Row="7" Grid.Column="2" x:Name="btnum9" Content="9" HorizontalAlignment="center"  VerticalAlignment="Top" Width="50" Click="btnum9_Click" FontSize="14"/>
+        <Button Grid.Row="7" Grid.Column="3" x:Name="tbAdd" Content="+" HorizontalAlignment="right"  VerticalAlignment="Top" Width="50" Click="tbAdd_Click" FontSize="14"/>
+        <Button Grid.Row="7" Grid.Column="1" x:Name="btMinus" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Click="btMinus_Click" FontSize="14"/>
+        <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" x:Name="btDivide" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" FontSize="14" Click="btDivide_Click"/>
+        <Button Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" x:Name="btMultiply" Content="*" HorizontalAlignment="right"  VerticalAlignment="Top" Width="90" FontSize="14" Click="btMultiply_Click"/>
+
+        <Button Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" x:Name="btClear" Content="Clear" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="50" Height="50" Click="btClear_Click" FontSize="14" />
+        <Button Grid.Row="6" Grid.Column="4" Grid.RowSpan="2" x:Name="btEnter" Content="Enter" HorizontalAlignment="right"  VerticalAlignment="Top" Width="50" Height="50" Click="btEnter_Click" FontSize="14"/>
+
+        <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" Margin="20,-10,0,0" x:Name="lbResultInfo" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" FontSize="14"/>
+        <Label Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="5"  Grid.RowSpan="3" Margin="0,-10,0,0" x:Name="lbResult" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="233" Height="41" FontSize="24"/>
     </Grid>
 </Window>

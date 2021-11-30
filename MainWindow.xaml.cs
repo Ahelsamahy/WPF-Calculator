@@ -109,13 +109,15 @@ namespace WPF_Calculator
          {
             lbResult.Visibility = Visibility.Hidden;
             lbResultInfo.Visibility = Visibility.Hidden;
-            HomePage.Height = 370;
+            HomePage.Height = 350;
+            
          }
          else
          {
             lbResult.Visibility = Visibility.Visible;
             lbResultInfo.Visibility = Visibility.Visible;
-            HomePage.Height = 450;
+            lbResultInfo.Content = "Result";
+            HomePage.Height = 400;
          }
       }
       public void operationMaker(char operate)
@@ -173,7 +175,6 @@ namespace WPF_Calculator
          {
             tbInput.Text = tbInput.Text.Substring(0, tbInput.Text.Length - 1);
          }
-
       }
 
       private void btEnter_Click(object sender, RoutedEventArgs e)
