@@ -144,9 +144,7 @@ namespace WPF_Calculator
       }
       private void btMinus_Click(object sender, RoutedEventArgs e)
       {
-         tbInput.Text = "";
          operationMaker('-');
-         tbInput.Text = string.Empty;
       }
       private void tbAdd_Click(object sender, RoutedEventArgs e)
       {
