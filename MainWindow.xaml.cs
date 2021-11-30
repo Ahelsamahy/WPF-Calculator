@@ -205,6 +205,7 @@ namespace WPF_Calculator
       private void tbClear_MouseDoubleClick(object sender, MouseButtonEventArgs e)
       {
          tbStored.Text = string.Empty;
+         tbInput.Focus();
       }
 
       private void tbInput_KeyDown(object sender, KeyEventArgs e)

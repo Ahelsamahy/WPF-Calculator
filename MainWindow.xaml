@@ -15,13 +15,12 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height = "*"></RowDefinition>
             <RowDefinition Height = "*"></RowDefinition>
             <RowDefinition Height = "*"></RowDefinition>
-            <RowDefinition Height = "0.50*"></RowDefinition>
+            <RowDefinition Height = "0.50*"></RowDefinition><!-- small space between num and tbInput-->
             <RowDefinition Height = "*"></RowDefinition>
             <RowDefinition Height = "*"></RowDefinition>
             <RowDefinition Height = "*"></RowDefinition>
@@ -56,6 +55,6 @@
         <Button Grid.Row="6" Grid.Column="4" Grid.RowSpan="2" x:Name="btEnter" Content="Enter" HorizontalAlignment="right"  VerticalAlignment="Top" Width="50" Height="50" Click="btEnter_Click" FontSize="14"/>
 
         <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" Margin="20,-10,0,0" x:Name="lbResultInfo" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" FontSize="14"/>
-        <Label Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="5"  Grid.RowSpan="3" Margin="0,-10,0,0" x:Name="lbResult" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="233" Height="41" FontSize="24"/>
+        <Label Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="5"  Grid.RowSpan="3" Margin="10,-10,0,0" x:Name="lbResult" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="233" Height="41" FontSize="24"/>
     </Grid>
 </Window>
