@@ -22,7 +22,7 @@
         <Button x:Name="btMinus" Content="-" HorizontalAlignment="Left" Margin="46,241,0,0" VerticalAlignment="Top" Width="50" Click="btMinus_Click" FontSize="14"/>
         <Button x:Name="btEnter" Content="Enter" HorizontalAlignment="Left" Margin="300,201,0,0" VerticalAlignment="Top" Width="50" Height="60" Click="btEnter_Click" FontSize="14"/>
         <Button x:Name="btClear" Content="Clear" HorizontalAlignment="Left" Margin="300,124,0,0" VerticalAlignment="Top" Width="50" Height="60" Click="btClear_Click" FontSize="14"/>
-        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Margin="46,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="39" FontSize="20" KeyDown="tbInput_KeyDown"/>
+        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Margin="46,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="39" FontSize="20" KeyDown="tbInput_KeyDown" PreviewTextInput="PreviewTextInput"/>
         <TextBox x:Name="tbStored" HorizontalAlignment="Left" Margin="46,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="20"/>
         <Label x:Name="lbStorednum" Content="Stored number&#xD;&#xA;" HorizontalAlignment="Left" Margin="22,13,0,0" VerticalAlignment="Top" Height="23"/>
         <Button x:Name="tbClear" Content="Clear here" HorizontalAlignment="Left" Margin="284,41,0,0" VerticalAlignment="Top" Foreground="#FF001FFF" BorderThickness="0,0,0,0" Width="66" Background="{x:Null}" FontStretch="Medium" FontStyle="Normal" FontWeight="Normal" AutomationProperties.HelpText="double click to clear the stored info" MouseDoubleClick="tbClear_MouseDoubleClick"/>

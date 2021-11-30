@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace WPF_Calculator
 {
@@ -32,6 +33,11 @@ namespace WPF_Calculator
       char operation; // to store the operation so it can bu used in switch case 
 
 
+      private void PreviewTextInput(object sender, TextCompositionEventArgs e)
+      {
+         Regex regex = new Regex("[^0-9]+");
+         e.Handled = regex.IsMatch(e.Text);
+      }
       private void btnum1_Click(object sender, RoutedEventArgs e)
       { addToInput(1); }
 
@@ -94,7 +100,7 @@ namespace WPF_Calculator
             lbStorednum.Visibility = Visibility.Visible;
             tbStored.Visibility = Visibility.Visible;
          }
-      } 
+      }
 
       // show / hide lbresult, lbResultInfo and change the width of application
       public void Result(bool action)
@@ -111,7 +117,7 @@ namespace WPF_Calculator
             lbResultInfo.Visibility = Visibility.Visible;
             HomePage.Height = 450;
          }
-      } 
+      }
       public void operationMaker(char operate)
       {
          Stored(true);
@@ -138,8 +144,9 @@ namespace WPF_Calculator
       }
       private void btMinus_Click(object sender, RoutedEventArgs e)
       {
+         tbInput.Text = "";
          operationMaker('-');
-
+         tbInput.Text = string.Empty;
       }
       private void tbAdd_Click(object sender, RoutedEventArgs e)
       {
